@@ -1,6 +1,7 @@
 @import '~@primer/css/markdown/index.scss';
 @import '~@primer/css/forms/form-select.scss';
 @import '~@primer/css/forms/form-control.scss';
+@import '~@primer/css/forms/form-group.scss';
 
 .wrapper {
 	margin: 20px auto;
@@ -10,24 +11,8 @@
 		border-radius: 3px;
 		padding: 20px;
 		form {
-			text-align: center;
+			//text-align: center;
 			padding: 10px;
-			.form-div {
-				padding-top: 5px;
-				padding-bottom: 5px;
-				#inputType {
-					width: 15%;
-				}
-				#inputUser {
-					width: 25%;
-				}
-				#inputRepo {
-					width: 25%;
-				}
-				#inputIssue {
-					width: 25%;
-				}
-			}
 			.form-select {
 				font-size: 16px;
 				padding-bottom: 6px;
@@ -44,9 +29,20 @@
 				padding: 0px;
 				padding-left: 6px;
 			}
-			input[type='number'].form-control {
-				padding: 0;
-				padding-left: 6px;
+			.form-group {
+				#input- {
+					&user {
+						width: 50%;
+					}
+					&theme {
+						width: 15%;
+					}
+					&pagesize {
+						width: 8%;
+						padding: 0;
+						padding-left: 6px;
+					}
+				}
 			}
 		}
 		pre .btnWrapper {

@@ -1,12 +1,18 @@
-function compare(a, b) {
-    if (a.number < b.number) {
-        return -1;
-    }
-    if (a.number > b.number) {
-        return 1;
-    }
-    return 0;
-}
+var inputType = document.getElementById("input-type");
+var inputUser = document.getElementById("input-user");
+var inputRepo = document.getElementById("input-repo");
+var inputIssue = document.getElementById("input-issue");
+var inputTheme = document.getElementById("input-theme");
+var inputPageSize = document.getElementById("input-pagesize");
+var btnCopyClipboard = document.getElementById("btnCopyClipboard");
+
+inputType.addEventListener('change', onTypeChanged);
+inputUser.addEventListener('change', onUserChanged);
+inputRepo.addEventListener('change', onRepoChanged);
+inputIssue.addEventListener('change', onIssueChanged);
+inputTheme.addEventListener('change', onThemeChanged);
+inputPageSize.addEventListener('input', onPageSizeChanged);
+btnCopyClipboard.addEventListener('click', onCopyClipboardClicked);
 
 function onTypeChanged(event) {
     let placeholder = 'User';
@@ -14,15 +20,14 @@ function onTypeChanged(event) {
         case 'users': placeholder = 'User'; break;
         case 'orgs': placeholder = 'Organization'; break;
     }
-    document.getElementById('inputUser').placeholder = placeholder;
+    inputUser.parentElement.parentElement.querySelector('.form-group-header label').innerText = placeholder;
+    inputUser.placeholder = placeholder;
 }
 
 function onUserChanged(event) {
-    let scope = document.getElementById('inputType').value;
-    fetch('https://api.github.com/' + scope + '/' + event.target.value + '/repos')
+    fetch('https://api.github.com/' + inputType.value + '/' + event.target.value + '/repos')
         .then(response => response.json())
         .then(data => {
-            let inputRepo = document.getElementById("inputRepo");
             inputRepo.innerHTML = '';
             for (let repo of data) {
                 var opt = document.createElement('option');
@@ -30,16 +35,15 @@ function onUserChanged(event) {
                 opt.value = repo.name;
                 inputRepo.appendChild(opt);
             }
+            inputRepo.parentElement.parentElement.style.display = 'block';
         })
         .catch(error => console.error(error));
 }
 
 function onRepoChanged(event) {
-    let user = document.getElementById('inputUser').value;
-    fetch(`https://api.github.com/repos/${user}/${event.target.value}/issues`)
+    fetch(`https://api.github.com/repos/${inputUser.value}/${event.target.value}/issues`)
         .then(response => response.json())
         .then(data => {
-            let inputIssue = document.getElementById("inputIssue");
             inputIssue.innerHTML = '';
             if (data && data.length) {
                 for (let issue of data.sort(compare)) {
@@ -54,16 +58,15 @@ function onRepoChanged(event) {
                 opt.value = -1;
                 inputIssue.appendChild(opt);
             }
+            inputIssue.parentElement.parentElement.style.display = 'block';
         })
         .catch(error => console.error(error));
 }
 
 function onIssueChanged(event) {
-    let user = document.getElementById('inputUser').value;
-    let repo = document.getElementById('inputRepo').value;
     let issue = event.target.value;
     if (issue !== -1)
-        document.getElementById("hljs-value-repo").innerText = `\'${user}/${repo}/${issue}\'`;
+        document.getElementById("hljs-value-repo").innerText = `\'${inputUser.value}/${inputRepo.value}/${issue}\'`;
 }
 
 function onThemeChanged(event) {
@@ -87,10 +90,8 @@ function onCopyClipboardClicked(event) {
     }, 1000);
 }
 
-document.getElementById("inputType").addEventListener('change', onTypeChanged);
-document.getElementById("inputUser").addEventListener('change', onUserChanged);
-document.getElementById("inputRepo").addEventListener('change', onRepoChanged);
-document.getElementById("inputIssue").addEventListener('change', onIssueChanged);
-document.getElementById("inputTheme").addEventListener('change', onThemeChanged);
-document.getElementById("inputPageSize").addEventListener('input', onPageSizeChanged);
-document.getElementById("btnCopyClipboard").addEventListener('click', onCopyClipboardClicked);
+function compare(a, b) {
+    if (a.number < b.number) return -1;
+    if (a.number > b.number) return 1;
+    return 0;
+}
