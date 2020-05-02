@@ -11,8 +11,8 @@ function compare(a, b) {
 function onTypeChanged(event) {
     let placeholder = 'User';
     switch (event.target.value) {
-        case 'user': placeholder = 'User'; break;
-        case 'org': placeholder = 'Organization'; break;
+        case 'users': placeholder = 'User'; break;
+        case 'orgs': placeholder = 'Organization'; break;
     }
     document.getElementById('inputUser').placeholder = placeholder;
 }
