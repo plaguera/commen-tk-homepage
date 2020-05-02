@@ -32,9 +32,28 @@
 				padding: 0px;
 				padding-left: 6px;
 			}
-			input[type=number].form-control {
+			input[type='number'].form-control {
 				padding: 0;
 				padding-left: 6px;
+			}
+		}
+		pre .btnWrapper {
+			float: right;
+			position: relative;
+			button {
+				background-color: rgb(250, 251, 252);
+				border-radius: 6px;
+				border: 1px solid rgb(225, 228, 232);
+				box-shadow: rgba(149, 157, 165, 0.1) 0px 1px 0px 0px,
+					rgba(255, 255, 255, 0.25) 0px 2px 0px 0px inset;
+				box-sizing: border-box;
+				font-weight: 600;
+				color: rgb(36, 41, 46);
+				padding: 6px 16px;
+				outline: none;
+				&:hover {
+					background-color: rgb(243, 244, 246);
+				}
 			}
 		}
 	}
