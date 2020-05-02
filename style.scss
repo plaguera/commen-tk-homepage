@@ -15,6 +15,18 @@
 			.form-div {
 				padding-top: 5px;
 				padding-bottom: 5px;
+				#inputType {
+					width: 15%;
+				}
+				#inputUser {
+					width: 25%;
+				}
+				#inputRepo {
+					width: 25%;
+				}
+				#inputIssue {
+					width: 25%;
+				}
 			}
 			.form-select {
 				font-size: 16px;
