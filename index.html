@@ -1,101 +1,119 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
-		<meta charset='utf-8' />
-		<meta http-equiv='X-UA-Compatible' content='IE=edge' />
+		<meta charset="utf-8" />
+		<meta name="description" content="A very simple widget that uses Github issues and their comments to provide any page with a comment section linked with Github." />
+		<meta name="keywords" content=",Widget, Github, Issues, Comment, HTML, CSS, JavaScript" />
+		<meta name="author" content="plaguera" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta
-			name='viewport'
-			content='width=device-width, initial-scale=1, shrink-to-fit=no'
+			name="viewport"
+			content="width=device-width, initial-scale=1, shrink-to-fit=no"
 		/>
-		<link rel='stylesheet' href='./style.scss' />
+		<link rel="stylesheet" href="./style.scss" />
 		<title>commen.tk</title>
+		<link rel="shortcut icon" type="image/png" href="/favicon.ico" />
 	</head>
 
 	<body>
-		<div class='wrapper'>
-			<div class='content markdown-body'>
+		<div class="wrapper">
+			<div class="content markdown-body">
 				<h1>commen.tk</h1>
 				<p>
 					A very simple widget that uses Github issues and their
 					comments to provide any page with a comment section linked
 					with Github.
-                </p>
-                <h2>Usage</h2>
-                <ul>
-                    <li>Generate the script tag you want with the form below.</li>
-                    <li>Paste it wherever you want the widget to appear in your webpage.</li>
-                    <li>The form below will only show public repos but feel free to use private repos as well.</li>
-                    <li>However, when using a private repo no comments will load without signing in with an autorized account.</li>
-                </ul>
-                <h2>Choose your repository</h2>
+				</p>
+				<h2>Usage</h2>
+				<ul>
+					<li>
+						Generate the script tag you want with the form below.
+					</li>
+					<li>
+						Paste it wherever you want the widget to appear in your
+						webpage.
+					</li>
+					<li>
+						The form below will only show public repos but feel free
+						to use private repos as well.
+					</li>
+					<li>
+						However, when using a private repo no comments will load
+						without signing in with an autorized account.
+					</li>
+				</ul>
+				<h2>Choose your Issue</h2>
 				<form>
-					<div class='form-group'>
-						<div class='form-group-header'>
-							<label for='input-type'>Account Type</label>
+					<div class="form-group">
+						<div class="form-group-header">
+							<label for="input-type">Account Type</label>
 						</div>
-						<div class='form-group-body'>
-							<select id='input-type' class='form-select'>
-								<option value='users'>User</option>
-								<option value='orgs'>Organization</option>
+						<div class="form-group-body">
+							<select id="input-type" class="form-select">
+								<option value="users">User</option>
+								<option value="orgs">Organization</option>
 							</select>
 						</div>
 					</div>
-					<div class='form-group'>
-						<div class='form-group-header'>
-							<label for='input-user'>User</label>
+					<div class="form-group">
+						<div class="form-group-header">
+							<label for="input-user">User</label>
 						</div>
-						<div class='form-group-body'>
+						<div class="form-group-body">
 							<input
-								id='input-user'
-								class='form-control'
-								type='text'
-								placeholder='User'
-								autocomplete='off'
+								id="input-user"
+								class="form-control"
+								type="text"
+								placeholder="User"
+								autocomplete="off"
 							/>
 						</div>
 					</div>
-					<div class='form-group' style='display: none;'>
-						<div class='form-group-header'>
-							<label for='input-repo'>Repository</label>
+					<div class="form-group" style="display: none;">
+						<div class="form-group-header">
+							<label for="input-repo">Repository</label>
 						</div>
-						<div class='form-group-body'>
-							<select id='input-repo' class='form-select'></select>
-						</div>
-					</div>
-					<div class='form-group' style='display: none;'>
-						<div class='form-group-header'>
-							<label for='input-issue'>Issue</label>
-						</div>
-						<div class='form-group-body'>
+						<div class="form-group-body">
 							<select
-								id='input-issue'
-								class='form-select'
+								id="input-repo"
+								class="form-select"
 							></select>
 						</div>
 					</div>
-					<div class='form-group'>
-						<div class='form-group-header'>
-							<label for='input-theme'>Theme</label>
+					<div class="form-group" style="display: none;">
+						<div class="form-group-header">
+							<label for="input-issue">Issue</label>
 						</div>
-						<div class='form-group-body'>
-							<select id='input-theme' class='form-select'>
+						<div class="form-group-body">
+							<select
+								id="input-issue"
+								class="form-select"
+							></select>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="form-group-header">
+							<label for="input-theme">Theme</label>
+						</div>
+						<div class="form-group-body">
+							<select id="input-theme" class="form-select">
 								<option>Light</option>
 								<option>Dark</option>
 							</select>
 						</div>
 					</div>
-					<div class='form-group'>
-						<div class='form-group-header'>
-							<label for='input-pagesize'>Page Size</label>
+					<div class="form-group">
+						<div class="form-group-header">
+							<label for="input-pagesize">Page Size</label>
 						</div>
-						<div class='form-group-body'>
+						<div class="form-group-body">
 							<input
-								id='input-pagesize'
-								class='form-control'
-								type='number'
-								min='1'
-								max='100'
-								value='10'
+								id="input-pagesize"
+								class="form-control"
+								type="number"
+								min="1"
+								max="100"
+								value="10"
 							/>
 						</div>
 					</div>
@@ -109,14 +127,14 @@
 &gt;&lt;/<span class='hljs-title'>script</span>&gt;</span></code></pre>
 			</div>
 			<script
-				type='text/javascript'
-				src='https://cdn.commen.tk/client.js'
-                repo='utterance/utterances/1'
-				theme='light'
-				page-size='10'
+				type="text/javascript"
+				src="https://cdn.commen.tk/client.js"
+				repo="utterance/utterances/1"
+				theme="light"
+				page-size="10"
 				async
 			></script>
 		</div>
 	</body>
-	<script type='text/javascript' src='index.js'></script>
+	<script type="text/javascript" src="index.js"></script>
 </html>
