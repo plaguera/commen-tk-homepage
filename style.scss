@@ -1,7 +1,5 @@
 @import '~@primer/css/markdown/index.scss';
-@import '~@primer/css/forms/form-select.scss';
-@import '~@primer/css/forms/form-control.scss';
-@import '~@primer/css/forms/form-group.scss';
+@import '~@primer/css/forms/index.scss';
 
 .wrapper {
 	margin: 20px auto;
@@ -10,40 +8,21 @@
 		border: solid 1px rgb(209, 213, 218);
 		border-radius: 3px;
 		padding: 20px;
-		form {
-			//text-align: center;
+		#input-owner-repo {
 			padding: 10px;
-			.form-select {
-				font-size: 16px;
-				padding-bottom: 6px;
-				padding-left: 8px;
-				padding-right: 24px;
-				padding-top: 6px;
-				-webkit-appearance: none;
-				-moz-appearance: none;
-				text-indent: 1px;
-				text-overflow: '';
-			}
-			.form-control {
-				font-size: 16px;
-				padding: 0px;
-				padding-left: 6px;
-			}
-			.form-group {
-				#input- {
-					&user {
-						width: 50%;
-					}
-					&theme {
-						width: 15%;
-					}
-					&pagesize {
-						width: 8%;
-						padding: 0;
-						padding-left: 6px;
-					}
-				}
-			}
+		}
+		.form-select {
+			-webkit-appearance: none;
+			-moz-appearance: none;
+		}
+		.form-checkbox label {
+			font-weight: normal;
+		}
+		p.warning {
+			text-align: center;
+			font-weight: lighter;
+			color: red;
+			padding: 10px;
 		}
 		pre .btnWrapper {
 			float: right;
@@ -68,6 +47,10 @@
 	.commen-tk {
 		padding-top: 10px;
 	}
+}
+
+.form-control {
+	min-height: 0;
 }
 
 .hljs- {
