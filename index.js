@@ -25,7 +25,6 @@ function onOwnerChanged(event) {
                 opt.innerText = repo.name;
                 opt.value = repo.name;
                 inputRepo.appendChild(opt);
-                console.log(repo.name);
             }
             inputRepo.parentElement.parentElement.style.display = 'block';
             document.getElementById("hljs-value-repo").innerText = `\'${inputOwner.value}/[REPO]\'`;
