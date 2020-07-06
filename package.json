@@ -1,13 +1,13 @@
 {
-  "name": "commen-tk.github.io",
+  "name": "commen-tk-homepage",
   "version": "1.0.0",
-  "main": "index.js",
-  "repository": "https://github.com/commen-tk/commen-tk.github.io.git",
+  "main": "src/js/index.js",
+  "repository": "https://github.com/plaguera/commen-tk-homepage.git",
   "author": "Pedro Lagüera <laguerapedro@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "parcel index.html -p 8080 --no-cache --no-hmr",
-    "build": "parcel build index.html --out-dir docs"
+    "start": "parcel src/html/index.html -p 8080 --no-cache",
+    "build": "parcel build src/html/index.html --no-cache --out-dir docs"
   },
   "dependencies": {
     "@primer/css": "^14.3.0",
