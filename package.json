@@ -6,8 +6,8 @@
   "author": "Pedro Lagüera <laguerapedro@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "parcel src/html/index.html -p 8080 --no-cache",
-    "build": "parcel build src/html/index.html --no-cache --out-dir docs"
+    "start": "parcel index.html -p 8080 --no-cache",
+    "build": "parcel build index.html --no-cache --out-dir docs"
   },
   "dependencies": {
     "@primer/css": "^14.3.0",
